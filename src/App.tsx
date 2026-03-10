@@ -8,7 +8,8 @@ import Contact from './pages/Contact';
 import BlogDetail from './pages/BlogDetail';
 import Korea2026 from './pages/Korea2026';
 import KoreaAdmissions from './pages/KoreaAdmissions';
-import Chantemerle from './pages/Chantemerle'; // <--- Dòng mới thêm
+import Chantemerle from './pages/Chantemerle';
+import Filolo from './pages/Filolo'; // <--- Thêm dòng này để sửa lỗi trang trắng
 
 export default function App() {
   return (
@@ -23,9 +24,10 @@ export default function App() {
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="han-quoc-2026" element={<Korea2026 />} />
           <Route path="tuyen-sinh-han-quoc" element={<KoreaAdmissions />} />
-          {/* Đường dẫn mới cho trại hè Chantemerle bên dưới */}
+          
+          {/* Đường dẫn cho các trại hè Thụy Sĩ */}
           <Route path="trai-he-chantemerle" element={<Chantemerle />} />
-        <Route path="trai-he-filolo" element={<Filolo />} />
+          <Route path="trai-he-filolo" element={<Filolo />} />
         </Route>
       </Routes>
     </BrowserRouter>
