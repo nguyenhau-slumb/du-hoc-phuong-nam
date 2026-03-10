@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Danh sách 5 ảnh hoạt động trong thư mục public/images
   const slides = [
     { url: "/images/slide1.jpg", title: "Tư vấn lộ trình du học chuyên sâu" },
     { url: "/images/slide2.jpg", title: "Lớp học tiếng Hàn năng động" },
@@ -27,41 +26,32 @@ export default function Home() {
     <div className="overflow-x-hidden bg-white">
       {/* 1. HERO SECTION - HIỆU ỨNG MỜ ẢO */}
       <section className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden bg-slate-950">
-        {/* BACKGROUND LAYERS */}
         <div className="absolute inset-0 z-0">
-          {/* Lớp ảnh mờ */}
           <img 
             src="https://images.unsplash.com/photo-1541339907198-e08756dee402?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
             alt="University Background" 
             className="w-full h-full object-cover opacity-30 blur-sm scale-110"
           />
-          {/* Lớp Gradient phủ mờ ảo */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#1A531B]/80 via-slate-950/90 to-slate-950"></div>
-          
-          {/* Các đốm màu nghệ thuật (Orbs) */}
           <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#F37021]/10 rounded-full blur-[120px] animate-pulse"></div>
           <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#1A531B]/30 rounded-full blur-[100px]"></div>
         </div>
 
-        {/* CONTENT */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20 text-center lg:text-left">
           <div className="max-w-3xl mx-auto lg:mx-0">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium mb-8 backdrop-blur-md">
               <span className="flex h-2 w-2 rounded-full bg-[#F37021] mr-3 animate-ping"></span>
               Đơn vị tư vấn du học uy tín hàng đầu
             </div>
-            
             <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-[1.05]">
               Kiến tạo tương lai <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F37021] via-orange-400 to-[#F37021] animate-gradient-x">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F37021] via-orange-400 to-[#F37021]">
                 vươn tầm thế giới
               </span>
             </h1>
-            
             <p className="text-lg md:text-xl text-slate-300 mb-12 leading-relaxed max-w-2xl font-light">
               Phương Nam Education đồng hành cùng học sinh Việt Nam hiện thực hóa giấc mơ du học tại Hàn Quốc, Thụy Sĩ và các quốc gia hàng đầu.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
               <Link to="/contact" className="px-10 py-4 bg-[#F37021] hover:bg-orange-600 text-white text-lg font-bold rounded-2xl shadow-2xl shadow-orange-500/20 transition-all hover:-translate-y-1">
                 Nhận tư vấn miễn phí
@@ -84,25 +74,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SLIDER HOẠT ĐỘNG THỰC TẾ */}
+      {/* 3. SLIDER HOẠT ĐỘNG THỰC TẾ - ĐÃ CANH GIỮA CHUẨN */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div className="max-w-xl text-center md:text-left">
-              <h2 className="text-[#F37021] font-bold uppercase text-sm tracking-widest mb-3">Thư viện ảnh</h2>
-              <h3 className="text-3xl md:text-5xl font-black text-[#1A531B] leading-tight">Hoạt động tiêu biểu tại Phương Nam</h3>
-            </div>
-            <div className="flex gap-3">
-              <button onClick={prevSlide} className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center hover:bg-[#1A531B] hover:text-white transition-all shadow-sm">
-                <span className="material-symbols-outlined">west</span>
-              </button>
-              <button onClick={nextSlide} className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center hover:bg-[#1A531B] hover:text-white transition-all shadow-sm">
-                <span className="material-symbols-outlined">east</span>
-              </button>
-            </div>
+          {/* HEADER SECTION - CENTERED */}
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <h2 className="text-[#F37021] font-bold uppercase text-sm tracking-[0.2em] mb-4">Thư viện ảnh</h2>
+            <h3 className="text-3xl md:text-5xl font-black text-[#1A531B] leading-tight">
+              Hoạt động tiêu biểu tại Phương Nam
+            </h3>
+            <div className="w-24 h-1.5 bg-[#F37021] mx-auto mt-6 rounded-full"></div>
           </div>
 
-          <div className="relative group overflow-hidden rounded-[3rem] shadow-2xl h-[450px] md:h-[650px]">
+          {/* SLIDER BOX */}
+          <div className="relative group overflow-hidden rounded-[3rem] shadow-2xl h-[450px] md:h-[650px] bg-slate-50">
             {slides.map((slide, index) => (
               <div
                 key={index}
@@ -112,11 +97,32 @@ export default function Home() {
               >
                 <img src={slide.url} alt={slide.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-12 left-12 text-white z-10">
+                <div className="absolute bottom-12 left-6 right-6 md:left-12 text-white z-10 text-center md:text-left">
                   <h3 className="text-2xl md:text-4xl font-black max-w-2xl leading-tight">{slide.title}</h3>
                 </div>
               </div>
             ))}
+
+            {/* NAVIGATION BUTTONS - MOVED INSIDE SLIDER */}
+            <button onClick={prevSlide} className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/20 hover:bg-[#F37021] backdrop-blur-md text-white rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center z-20 border border-white/20">
+              <span className="material-symbols-outlined text-3xl">chevron_left</span>
+            </button>
+            <button onClick={nextSlide} className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/20 hover:bg-[#F37021] backdrop-blur-md text-white rounded-full opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center z-20 border border-white/20">
+              <span className="material-symbols-outlined text-3xl">chevron_right</span>
+            </button>
+
+            {/* DOTS INDICATOR */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === currentSlide ? "w-12 bg-[#F37021]" : "w-2.5 bg-white/40"
+                  }`}
+                ></button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -141,11 +147,13 @@ export default function Home() {
                 Xem chi tiết <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </Link>
             </div>
-            <div className="bg-[#1A531B] p-10 rounded-[2.5rem] shadow-xl text-white">
-              <h4 className="text-3xl font-black mb-6">Đã sẵn sàng?</h4>
-              <p className="text-white/70 mb-10 leading-relaxed">Liên hệ với đội ngũ chuyên gia của chúng tôi để bắt đầu kế hoạch của bạn ngay hôm nay.</p>
-              <Link to="/contact" className="inline-block px-8 py-4 bg-[#F37021] rounded-2xl font-black uppercase text-sm tracking-widest shadow-lg">
-                Gửi yêu cầu
+            <div className="bg-[#1A531B] p-10 rounded-[2.5rem] shadow-xl text-white flex flex-col justify-between">
+              <div>
+                <h4 className="text-3xl font-black mb-6 leading-tight">Bạn đã sẵn sàng cất cánh?</h4>
+                <p className="text-white/70 mb-10 leading-relaxed">Liên hệ với đội ngũ chuyên gia của chúng tôi để bắt đầu kế hoạch của bạn ngay hôm nay.</p>
+              </div>
+              <Link to="/contact" className="inline-block px-8 py-4 bg-[#F37021] hover:bg-orange-600 rounded-2xl font-black uppercase text-sm tracking-widest shadow-lg text-center transition-all">
+                Gửi yêu cầu ngay
               </Link>
             </div>
           </div>
