@@ -7,7 +7,8 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import BlogDetail from './pages/BlogDetail';
 import Korea2026 from './pages/Korea2026';
-import KoreaAdmissions from './pages/KoreaAdmissions'; // <--- Dòng mới thêm
+import KoreaAdmissions from './pages/KoreaAdmissions';
+import Chantemerle from './pages/Chantemerle'; // <--- Dòng mới thêm
 
 export default function App() {
   return (
@@ -21,8 +22,9 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="blog-detail" element={<BlogDetail />} />
           <Route path="han-quoc-2026" element={<Korea2026 />} />
-          {/* Dòng Route mới cho trang Tuyển sinh bên dưới */}
-          <Route path="tuyen-sinh-han-quoc" element={<KoreaAdmissions />} /> 
+          <Route path="tuyen-sinh-han-quoc" element={<KoreaAdmissions />} />
+          {/* Đường dẫn mới cho trại hè Chantemerle bên dưới */}
+          <Route path="trai-he-chantemerle" element={<Chantemerle />} />
         </Route>
       </Routes>
     </BrowserRouter>
