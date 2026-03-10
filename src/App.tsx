@@ -25,6 +25,9 @@ export default function App() {
           <Route path="tuyen-sinh-han-quoc" element={<KoreaAdmissions />} />
           {/* Đường dẫn mới cho trại hè Chantemerle bên dưới */}
           <Route path="trai-he-chantemerle" element={<Chantemerle />} />
+          import Filolo from './pages/Filolo';
+// ...
+<Route path="trai-he-filolo" element={<Filolo />} />
         </Route>
       </Routes>
     </BrowserRouter>
